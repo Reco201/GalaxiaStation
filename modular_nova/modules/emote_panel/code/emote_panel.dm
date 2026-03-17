@@ -7,7 +7,8 @@
 	// code\modules\mob\emote.dm
 	var/static/list/mob_emotes = list(
 		/mob/proc/emote_flip,
-		/mob/proc/emote_spin
+		/mob/proc/emote_spin,
+		/mob/proc/emote_rolld20,
 	)
 	all_emotes += mob_emotes
 
@@ -113,6 +114,8 @@
 		/mob/living/proc/emote_merp,
 		/mob/living/proc/emote_bark,
 		/mob/living/proc/emote_squish,
+		/mob/living/proc/emote_bubble,
+		/mob/living/proc/emote_pop,
 		/mob/living/proc/emote_meow,
 		/mob/living/proc/emote_hiss1,
 		/mob/living/proc/emote_chitter,
@@ -161,7 +164,11 @@
 		/mob/living/proc/emote_dgrowl,
 		/mob/living/proc/emote_aggrobark,
 		/mob/living/proc/emote_dcomplain,
-		/mob/living/proc/emote_meowdeep
+		/mob/living/proc/emote_meowdeep,
+		/mob/living/proc/emote_teshchirp,
+		/mob/living/proc/emote_teshsqueak,
+		/mob/living/proc/emote_teshtrill,
+		/mob/living/proc/emote_gecker,
 	)
 	all_emotes += nova_living_emotes
 
@@ -277,6 +284,10 @@
 	set category = "Emotes"
 	usr.emote("spin", intentional = TRUE)
 
+/mob/proc/emote_rolld20()
+	set name = "| Roll 20 |"
+	set category = "Emotes"
+	usr.emote("rolld20", intentional = TRUE)
 // code\modules\mob\living\emote.dm
 
 /mob/living/proc/emote_blush()
@@ -681,6 +692,11 @@
 	set category = "Emotes+"
 	usr.emote("yip", intentional = TRUE)
 
+/mob/living/proc/emote_gecker()
+	set name = "> Gecker"
+	set category = "Emotes+"
+	usr.emote("gecker", intentional = TRUE)
+
 /mob/living/proc/emote_fwhine()
 	set name = "> Fox Whine"
 	set category = "Emotes+"
@@ -720,6 +736,16 @@
 	set name = "> Squish"
 	set category = "Emotes+"
 	usr.emote("squish", intentional = TRUE)
+
+/mob/living/proc/emote_bubble()
+	set name = "> Bubble"
+	set category = "Emotes+"
+	usr.emote("bubble", intentional = TRUE)
+
+/mob/living/proc/emote_pop()
+	set name = "> Pop"
+	set category = "Emotes+"
+	usr.emote("pop", intentional = TRUE)
 
 /mob/living/proc/emote_meow()
 	set name = "> Meow"
@@ -954,6 +980,21 @@
 	set name = "> Meow Deeply"
 	set category = "Emotes+"
 	usr.emote("meowdeep", intentional = TRUE)
+
+/mob/living/proc/emote_teshchirp()
+	set name = "> Tesh Chirp"
+	set category = "Emotes+"
+	usr.emote("teshchirp", intentional = TRUE)
+
+/mob/living/proc/emote_teshsqueak()
+	set name = "> Tesh Squeak"
+	set category = "Emotes+"
+	usr.emote("teshsqueak", intentional = TRUE)
+
+/mob/living/proc/emote_teshtrill()
+	set name = "> Tesh Trill"
+	set category = "Emotes+"
+	usr.emote("teshtrill", intentional = TRUE)
 
 // code\modules\mob\living\brain\emote.dm
 
